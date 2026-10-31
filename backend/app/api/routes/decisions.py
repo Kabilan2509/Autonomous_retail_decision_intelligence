@@ -18,6 +18,8 @@ def get_decisions(
 ) -> Dict[str, Any]:
     if not orchestrator.active_decisions:
         orchestrator.run({"limit": 50})
+    elif store_id and not any(d["store_id"] == store_id for d in orchestrator.active_decisions.values()):
+        orchestrator.run({"store_id": store_id, "limit": 20})
 
     results = list(orchestrator.active_decisions.values())
 

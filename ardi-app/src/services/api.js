@@ -59,10 +59,11 @@ export const api = {
     fetchApi(`/external/weather${location ? `?location=${location}` : ''}`),
 
   // AI Decision Center (CRUD & Approvals)
-  getDecisions: (limit = 50, action, status) => {
+  getDecisions: (limit = 50, action, status, storeId) => {
     let q = `?limit=${limit}`
-    if (action) q += `&action=${action}`
-    if (status) q += `&approval_status=${status}`
+    if (storeId) q += `&store_id=${storeId}`
+    if (action && action !== 'ALL') q += `&action=${action}`
+    if (status && status !== 'ALL') q += `&approval_status=${status}`
     return fetchApi(`/decisions/${q}`)
   },
   generateDecisions: (storeId, limit = 50) =>
