@@ -413,12 +413,28 @@ function InventoryRow({ item, index, onTransfer }) {
 
 export default function Warehouses() {
   const currentStore        = useAppStore((s) => s.currentStore)
-  const stores              = useAppStore((s) => s.stores)
+  const activeCity          = useAppStore((s) => s.activeCity)
+  const activeStore         = useAppStore((s) => s.activeStore)
+  const cities              = useAppStore((s) => s.cities)
   const warehouses          = useAppStore((s) => s.warehouses)
+  const storesAll           = useAppStore((s) => s.stores)
   const getCurrentWarehouse = useAppStore((s) => s.getCurrentWarehouse)
 
-  const warehouse = getCurrentWarehouse()
-  const inventory = warehouse?.inventory ?? []
+  const isAllStores = activeStore === 'all'
+  const warehouse   = getCurrentWarehouse()
+
+  // When a specific store is selected show that store's inventory;
+  // otherwise fall back to the city warehouse inventory
+  const storeObj    = isAllStores ? null : storesAll.find((s) => s.id === activeStore)
+  const cityObj     = cities.find((c) => c.id === activeCity) ?? cities[0]
+  const inventory   = isAllStores
+    ? (warehouse?.inventory ?? [])
+    : (storeObj?.inventory ?? warehouse?.inventory ?? [])
+
+  // Location label
+  const locationLabel = isAllStores
+    ? (warehouse?.location ?? `${currentStore} Warehouse`)
+    : `${storeObj?.name ?? ''} · ${storeObj?.area ?? ''}`
 
   const [modalItem, setModalItem]   = useState(null)
   const [transfers, setTransfers]   = useState([])   // log of confirmed transfers
@@ -446,10 +462,23 @@ export default function Warehouses() {
         </div>
         <h1 className="text-2xl font-bold text-white">Inventory Control</h1>
         <p className="text-sm text-slate-400 mt-1">
-          Viewing inventory for{' '}
-          <span className="text-purple-400 font-semibold">{warehouse?.location ?? currentStore}</span>
+          <span className="text-blue-400 font-semibold">{cityObj.name}</span>
+          {!isAllStores && storeObj && (
+            <> <span className="text-slate-600">›</span>{' '}
+              <span className="text-purple-400 font-semibold">{storeObj.area}</span>
+            </>
+          )}
           {' · '}
-          <span className="text-blue-400 font-semibold">{currentStore}</span>
+          <span className="text-slate-500">
+            {isAllStores ? warehouse?.location : storeObj?.address}
+          </span>
+          {!isAllStores && storeObj?.daily_revenue && (
+            <> <span className="text-slate-700 mx-1">·</span>
+              <span className="text-emerald-400 font-semibold">
+                ₹{(storeObj.daily_revenue / 1000).toFixed(0)}k/day revenue
+              </span>
+            </>
+          )}
         </p>
       </div>
 
@@ -614,7 +643,7 @@ export default function Warehouses() {
         <TransferModal
           item={modalItem}
           currentStore={currentStore}
-          stores={stores}
+          stores={cities}
           onClose={() => setModalItem(null)}
           onConfirm={handleTransferConfirm}
         />

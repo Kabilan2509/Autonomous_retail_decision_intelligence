@@ -496,27 +496,41 @@ function CompetitorTable() {
   )
 }
 
-// ─── Stat Pill ────────────────────────────────────────────────────────────────
+// ─── Stat Pill ──────────────────────────────�export default function Promotions() {
+  const activeCity  = useAppStore((s) => s.activeCity)
+  const activeStore = useAppStore((s) => s.activeStore)
+  const cities      = useAppStore((s) => s.cities)
+  const stores      = useAppStore((s) => s.stores)
 
-function StatPill({ icon: Icon, label, value, color, sub }) {
+  const cityObj     = cities.find((c) => c.id === activeCity) ?? cities[0]
+  const isAllStores = activeStore === 'all'
+  const storeObj    = isAllStores ? null : stores.find((s) => s.id === activeStore)
+
   return (
-    <div className="glass-panel px-4 py-3.5 flex items-center gap-3">
-      <div className={clsx('w-9 h-9 rounded-xl flex items-center justify-center shrink-0', color)}>
-        <Icon className="w-4.5 h-4.5 text-white" style={{ width: '1.1rem', height: '1.1rem' }} />
-      </div>
-      <div>
-        <p className="text-lg font-bold text-white leading-none">{value}</p>
-        <p className="text-[11px] text-slate-500 mt-0.5">{label}</p>
-        {sub && <p className="text-[10px] text-emerald-400 mt-0.5 font-semibold">{sub}</p>}
-      </div>
-    </div>
-  )
-}
+    <div className="min-h-full animate-fade-in">
 
-// ─── Main Promotions Page ─────────────────────────────────────────────────────
-
-export default function Promotions() {
-  const currentStore = useAppStore((s) => s.currentStore)
+      {/* ── Page heading ──────────────────────────────────────────────────── */}
+      <div className="mb-6">
+        <div className="flex items-center gap-2 mb-1">
+          <div className="w-6 h-6 rounded-md bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center">
+            <Tag className="w-3.5 h-3.5 text-white" />
+          </div>
+          <span className="text-xs font-semibold text-purple-400 uppercase tracking-widest">
+            Promotions &amp; Competitor Intel
+          </span>
+        </div>
+        <h1 className="text-2xl font-bold text-white">Clearance Radar</h1>
+        <p className="text-sm text-slate-400 mt-1">
+          AI-driven dynamic pricing ·{' '}
+          <span className="text-purple-400 font-semibold">{cityObj.name}</span>
+          {!isAllStores && storeObj && (
+            <> <span className="text-slate-600">›</span>{' '}
+              <span className="text-pink-400 font-semibold">{storeObj.area}</span>
+            </>
+          )}
+        </p>
+      </div>
+rrentStore = useAppStore((s) => s.currentStore)
 
   return (
     <div className="min-h-full animate-fade-in">
