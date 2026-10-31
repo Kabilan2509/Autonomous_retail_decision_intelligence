@@ -2,38 +2,41 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import {
   LayoutDashboard,
-  Warehouse,
-  Map,
-  Tag,
-  Swords,
-  BarChart3,
-  ChevronLeft,
-  ChevronRight,
-  Zap,
-  X,
+  TrendingUp,
+  Boxes,
+  Truck,
+  DollarSign,
+  Globe2,
+  BrainCircuit,
+  ArrowLeftRight,
+  FlaskConical,
+  LineChart,
 } from 'lucide-react'
 import { clsx } from 'clsx'
 
-const NAV_ITEMS = [
-  { to: '/app/decision-hub', label: 'Decision Hub',       icon: LayoutDashboard },
-  { to: '/app/warehouses',   label: 'Warehouses',         icon: Warehouse },
-  { to: '/app/logistics-map',label: 'Logistics Map',      icon: Map },
-  { to: '/app/promotions',   label: 'Promotions',         icon: Tag },
-  { to: '/app/competitors',  label: 'Competitors & Events', icon: Swords },
-  { to: '/app/analytics',    label: 'Analytics',          icon: BarChart3 },
+export const NAV_ITEMS = [
+  { to: '/app/decision-hub',   label: 'AI Decision Center',  icon: BrainCircuit, badge: 'Active' },
+  { to: '/app/overview',       label: 'Executive Overview',  icon: LayoutDashboard },
+  { to: '/app/demand',         label: 'Demand Intelligence', icon: TrendingUp },
+  { to: '/app/inventory',      label: 'Inventory Control',   icon: Boxes },
+  { to: '/app/suppliers',      label: 'Supplier Risk',       icon: Truck },
+  { to: '/app/pricing',        label: 'Pricing & Margin',    icon: DollarSign },
+  { to: '/app/external',       label: 'News & Weather',      icon: Globe2 },
+  { to: '/app/logistics-map',  label: 'Lateral Logistics',   icon: ArrowLeftRight },
+  { to: '/app/simulation-lab', label: 'Simulation Lab',      icon: FlaskConical, badge: 'Scenarios' },
+  { to: '/app/audit',          label: 'KPI & Baseline Audit',icon: LineChart },
 ]
 
-// Shared nav list used by both desktop sidebar and mobile drawer
 function NavList({ collapsed, onNavClick }) {
   return (
     <nav className="flex-1 py-4 overflow-y-auto overflow-x-hidden">
       {!collapsed && (
-        <p className="px-4 text-[10px] font-semibold tracking-widest text-slate-600 uppercase mb-2">
-          Navigation
+        <p className="px-4 text-[10px] font-semibold tracking-widest text-slate-500 uppercase mb-2">
+          Autonomous Retail Intelligence
         </p>
       )}
       <ul className="space-y-1 px-2">
-        {NAV_ITEMS.map(({ to, label, icon: Icon }) => (
+        {NAV_ITEMS.map(({ to, label, icon: Icon, badge }) => (
           <li key={to}>
             <NavLink
               to={to}
@@ -41,8 +44,10 @@ function NavList({ collapsed, onNavClick }) {
               onClick={onNavClick}
               className={({ isActive }) =>
                 clsx(
-                  'nav-link',
-                  isActive && 'active',
+                  'flex items-center gap-3 px-3 py-2.5 rounded-lg text-xs font-medium transition-all duration-150',
+                  isActive
+                    ? 'bg-blue-600/20 text-blue-400 border border-blue-500/30'
+                    : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/60',
                   collapsed && 'justify-center px-2',
                 )
               }
@@ -51,20 +56,20 @@ function NavList({ collapsed, onNavClick }) {
                 <>
                   <Icon
                     className={clsx(
-                      'shrink-0 transition-colors duration-200',
-                      collapsed ? 'w-5 h-5' : 'w-4.5 h-4.5',
-                      isActive ? 'text-blue-400' : 'text-slate-500 group-hover:text-slate-300',
+                      'shrink-0 transition-colors',
+                      isActive ? 'text-blue-400' : 'text-slate-400'
                     )}
-                    style={{ width: collapsed ? '1.25rem' : '1.1rem', height: collapsed ? '1.25rem' : '1.1rem' }}
+                    style={{ width: '1.15rem', height: '1.15rem' }}
                   />
                   {!collapsed && (
-                    <span className="text-sm font-medium whitespace-nowrap overflow-hidden">
+                    <span className="flex-1 whitespace-nowrap overflow-hidden text-ellipsis">
                       {label}
                     </span>
                   )}
-                  {/* Active indicator dot for collapsed */}
-                  {collapsed && isActive && (
-                    <span className="absolute right-1 top-1/2 -translate-y-1/2 w-1 h-4 rounded-full bg-blue-400" />
+                  {!collapsed && badge && (
+                    <span className="px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wider rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                      {badge}
+                    </span>
                   )}
                 </>
               )}
@@ -79,104 +84,53 @@ function NavList({ collapsed, onNavClick }) {
 export default function Sidebar({ collapsed, onToggle, mobileOpen, onMobileClose }) {
   return (
     <>
-      {/* ── Mobile Backdrop overlay ── */}
       {mobileOpen && (
         <div
           className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm md:hidden"
           onClick={onMobileClose}
-          aria-hidden="true"
         />
       )}
 
-      {/* ── Mobile slide-out drawer ── */}
       <aside
         className={clsx(
-          'fixed inset-y-0 left-0 z-50 w-72 flex flex-col',
-          'bg-slate-900/95 backdrop-blur-md border-r border-slate-800',
-          'transition-transform duration-300 ease-in-out',
-          'md:hidden',
+          'fixed inset-y-0 left-0 z-50 w-64 flex flex-col',
+          'bg-slate-900 border-r border-slate-800',
+          'transition-transform duration-300 ease-in-out md:static md:translate-x-0',
           mobileOpen ? 'translate-x-0' : '-translate-x-full',
+          collapsed ? 'md:w-16' : 'md:w-64'
         )}
       >
-        {/* Drawer header */}
-        <div className="h-16 flex items-center justify-between px-4 border-b border-slate-800 shrink-0">
-          <div className="flex items-center gap-3">
-            <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 shrink-0">
-              <Zap className="w-4 h-4 text-white" />
-            </div>
-            <div>
-              <p className="font-bold text-sm text-white leading-tight">ARDI Platform</p>
-              <p className="text-xs text-slate-500">Retail Intelligence</p>
-            </div>
-          </div>
-          <button
-            id="mobile-drawer-close"
-            onClick={onMobileClose}
-            className="p-2 rounded-lg text-slate-500 hover:text-white hover:bg-slate-800 transition-all duration-200"
-          >
-            <X className="w-4 h-4" />
-          </button>
-        </div>
-
-        {/* Nav list — close drawer on link click */}
-        <NavList collapsed={false} onNavClick={onMobileClose} />
-      </aside>
-
-      {/* ── Desktop sidebar (hidden on mobile) ── */}
-      <aside
-        className={clsx(
-          'hidden md:flex flex-col h-full bg-slate-900/60 backdrop-blur-md border-r border-slate-800',
-          'transition-all duration-300 ease-in-out relative shrink-0',
-          collapsed ? 'w-16' : 'w-64',
-        )}
-      >
-        {/* Sidebar header */}
-        <div className={clsx(
-          'h-16 flex items-center border-b border-slate-800 shrink-0 overflow-hidden',
-          collapsed ? 'justify-center px-0' : 'px-4 gap-3',
-        )}>
+        <div className="flex items-center justify-between h-14 px-4 border-b border-slate-800">
           {!collapsed && (
-            <>
-              <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 shrink-0">
-                <Zap className="w-4 h-4 text-white" />
+            <div className="flex items-center gap-2">
+              <div className="w-7 h-7 rounded-lg bg-gradient-to-tr from-blue-600 to-teal-400 flex items-center justify-center font-bold text-white text-xs">
+                AR
               </div>
-              <div className="overflow-hidden">
-                <p className="font-bold text-sm text-white leading-tight whitespace-nowrap">ARDI Platform</p>
-                <p className="text-xs text-slate-500 whitespace-nowrap">Retail Intelligence</p>
+              <div>
+                <span className="font-bold text-sm tracking-tight text-white block">ARDI Platform</span>
+                <span className="text-[10px] text-teal-400 font-mono">Retail Intelligence V3</span>
               </div>
-            </>
+            </div>
           )}
           {collapsed && (
-            <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600">
-              <Zap className="w-4 h-4 text-white" />
+            <div className="mx-auto w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center font-bold text-white text-xs">
+              AR
             </div>
           )}
         </div>
 
-        <NavList collapsed={collapsed} onNavClick={undefined} />
+        <NavList collapsed={collapsed} onNavClick={onMobileClose} />
 
-        {/* Collapse toggle */}
-        <div className="shrink-0 border-t border-slate-800 p-2">
-          <button
-            id="sidebar-toggle"
-            onClick={onToggle}
-            className={clsx(
-              'flex items-center gap-2 w-full px-3 py-2.5 rounded-lg',
-              'text-slate-500 hover:text-white hover:bg-slate-800',
-              'transition-all duration-300 ease-in-out',
-              collapsed && 'justify-center',
-            )}
-            title={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
-          >
-            {collapsed ? (
-              <ChevronRight className="w-4 h-4 shrink-0" />
-            ) : (
-              <>
-                <ChevronLeft className="w-4 h-4 shrink-0" />
-                <span className="text-xs font-medium whitespace-nowrap">Collapse</span>
-              </>
-            )}
-          </button>
+        <div className="p-3 border-t border-slate-800 text-[11px] text-slate-500">
+          {!collapsed && (
+            <div className="flex items-center justify-between">
+              <span className="inline-flex items-center gap-1.5 text-teal-400">
+                <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" />
+                Live Engine
+              </span>
+              <span className="font-mono text-[10px]">HiGHS + Chronos</span>
+            </div>
+          )}
         </div>
       </aside>
     </>
