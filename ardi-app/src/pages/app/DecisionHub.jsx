@@ -27,12 +27,28 @@ import useAppStore from '../../store/useStore'
 
 const TYPE_CONFIG = {
   INVENTORY_TRANSFER: {
-    label: 'Inventory Transfer',
+    label: 'Inter-City Transfer',
     icon: ArrowRightLeft,
     badge: 'bg-violet-500/15 text-violet-300 border border-violet-500/30',
     glow: 'shadow-violet-500/10',
     accent: 'from-violet-500 to-purple-600',
     dot: 'bg-violet-400',
+  },
+  INTRA_CITY_TRANSFER: {
+    label: 'Intra-City Transfer',
+    icon: ArrowRightLeft,
+    badge: 'bg-blue-500/15 text-blue-300 border border-blue-500/30',
+    glow: 'shadow-blue-500/10',
+    accent: 'from-blue-500 to-cyan-600',
+    dot: 'bg-blue-400',
+  },
+  WAREHOUSE_REPLENISHMENT: {
+    label: 'Warehouse → Store',
+    icon: PackagePlus,
+    badge: 'bg-emerald-500/15 text-emerald-300 border border-emerald-500/30',
+    glow: 'shadow-emerald-500/10',
+    accent: 'from-emerald-500 to-teal-600',
+    dot: 'bg-emerald-400',
   },
   MARKDOWN: {
     label: 'Markdown',
@@ -65,6 +81,16 @@ const WEIGHTED_FACTORS = {
     { label: 'Weather Impact',       value: 40, color: 'bg-orange-400',  icon: CloudSun },
     { label: 'Demand Forecast',      value: 35, color: 'bg-blue-400',    icon: TrendingUp },
     { label: 'Stock Level Analysis', value: 25, color: 'bg-violet-400',  icon: BarChart3 },
+  ],
+  INTRA_CITY_TRANSFER: [
+    { label: 'Weather Impact',       value: 38, color: 'bg-orange-400',  icon: CloudSun },
+    { label: 'Stock Imbalance',      value: 37, color: 'bg-blue-400',    icon: BarChart3 },
+    { label: 'Transfer Cost Saving', value: 25, color: 'bg-cyan-400',    icon: TrendingUp },
+  ],
+  WAREHOUSE_REPLENISHMENT: [
+    { label: 'Stockout Risk',        value: 50, color: 'bg-red-400',     icon: AlertTriangle },
+    { label: 'Sales Velocity',       value: 30, color: 'bg-emerald-400', icon: TrendingUp },
+    { label: 'Warehouse Capacity',   value: 20, color: 'bg-blue-400',    icon: BarChart3 },
   ],
   MARKDOWN: [
     { label: 'Expiry Risk Score',  value: 45, color: 'bg-red-400',    icon: AlertTriangle },
@@ -155,11 +181,15 @@ function ActionCard({ decision, isActive, onClick, onApprove, onReject, onModify
   // Human-readable action headline
   const headline = (() => {
     if (decision.type === 'INVENTORY_TRANSFER')
-      return `Transfer ${decision.quantity} units of ${decision.sku} from ${decision.source} to ${decision.destination}`
+      return `Transfer ${decision.quantity} units of ${decision.sku} · ${decision.source_label ?? decision.source} → ${decision.destination_label ?? decision.destination}`
+    if (decision.type === 'INTRA_CITY_TRANSFER')
+      return `Intra-city transfer of ${decision.quantity} units of ${decision.sku} · ${decision.source_label} → ${decision.destination_label}`
+    if (decision.type === 'WAREHOUSE_REPLENISHMENT')
+      return `Replenish ${decision.quantity} units of ${decision.sku} · ${decision.source_label} → ${decision.destination_label}`
     if (decision.type === 'MARKDOWN')
-      return `Apply markdown on ${decision.quantity} units of ${decision.sku} in ${decision.source}`
+      return `Apply markdown on ${decision.quantity} units of ${decision.sku} at ${decision.source_label ?? decision.source}`
     if (decision.type === 'RESTOCK_ALERT')
-      return `Restock ${decision.quantity} units of ${decision.sku} in ${decision.destination}`
+      return `Restock ${decision.quantity} units of ${decision.sku} at ${decision.destination_label ?? decision.destination}`
     return decision.sku
   })()
 

@@ -496,7 +496,10 @@ function CompetitorTable() {
   )
 }
 
-// ─── Stat Pill ──────────────────────────────�export default function Promotions() {
+
+// --- Main Promotions Page ---
+
+export default function Promotions() {
   const activeCity  = useAppStore((s) => s.activeCity)
   const activeStore = useAppStore((s) => s.activeStore)
   const cities      = useAppStore((s) => s.cities)
@@ -505,32 +508,6 @@ function CompetitorTable() {
   const cityObj     = cities.find((c) => c.id === activeCity) ?? cities[0]
   const isAllStores = activeStore === 'all'
   const storeObj    = isAllStores ? null : stores.find((s) => s.id === activeStore)
-
-  return (
-    <div className="min-h-full animate-fade-in">
-
-      {/* ── Page heading ──────────────────────────────────────────────────── */}
-      <div className="mb-6">
-        <div className="flex items-center gap-2 mb-1">
-          <div className="w-6 h-6 rounded-md bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center">
-            <Tag className="w-3.5 h-3.5 text-white" />
-          </div>
-          <span className="text-xs font-semibold text-purple-400 uppercase tracking-widest">
-            Promotions &amp; Competitor Intel
-          </span>
-        </div>
-        <h1 className="text-2xl font-bold text-white">Clearance Radar</h1>
-        <p className="text-sm text-slate-400 mt-1">
-          AI-driven dynamic pricing ·{' '}
-          <span className="text-purple-400 font-semibold">{cityObj.name}</span>
-          {!isAllStores && storeObj && (
-            <> <span className="text-slate-600">›</span>{' '}
-              <span className="text-pink-400 font-semibold">{storeObj.area}</span>
-            </>
-          )}
-        </p>
-      </div>
-rrentStore = useAppStore((s) => s.currentStore)
 
   return (
     <div className="min-h-full animate-fade-in">
