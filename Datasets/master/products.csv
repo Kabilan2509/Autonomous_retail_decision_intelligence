@@ -1,0 +1,101 @@
+sku_id,product_name,category,subcategory,unit_of_measure,cost,selling_price,gross_margin_per_unit,gross_margin_pct,shelf_life_days,is_perishable,demand_profile,base_daily_demand_units,min_stock_units,target_stock_units,max_stock_units
+SKU0001,Tomato,Vegetables,Tomato,kg,4.58,6.54,1.96,0.3,5,True,high,2.8,5,19,39
+SKU0002,Onion,Vegetables,Onion,kg,30.3,40.4,10.1,0.25,25,True,medium,5.0,10,35,70
+SKU0003,Potato,Vegetables,Potato,kg,31.58,42.1,10.53,0.25,30,True,medium,5.0,10,35,70
+SKU0004,Carrot,Vegetables,Carrot,kg,44.39,63.41,19.02,0.3,10,True,medium,1.4,2,9,19
+SKU0005,Spinach,Vegetables,Spinach,bunch,10.74,16.52,5.78,0.35,3,True,high,1.0,2,8,15
+SKU0006,Cauliflower,Vegetables,Cauliflower,piece,19.54,27.91,8.37,0.3,5,True,medium,1.0,2,8,15
+SKU0007,Capsicum,Vegetables,Capsicum,kg,40.45,59.49,19.04,0.32,7,True,medium,1.1,2,8,15
+SKU0008,Brinjal,Vegetables,Brinjal,kg,37.17,53.09,15.93,0.3,7,True,medium,1.2,2,8,16
+SKU0009,Okra,Vegetables,Okra,kg,36.28,51.83,15.55,0.3,6,True,medium,1.1,2,8,15
+SKU0010,Cucumber,Vegetables,Cucumber,kg,17.31,24.74,7.42,0.3,8,True,medium,1.2,2,8,16
+SKU0011,Cabbage,Vegetables,Cabbage,piece,23.0,31.94,8.94,0.28,8,True,medium,1.0,2,8,15
+SKU0012,Green Chilli,Vegetables,Green Chilli,kg,51.08,78.59,27.5,0.35,4,True,high,0.55,2,8,15
+SKU0013,Drumstick,Vegetables,Drumstick,kg,38.25,56.26,18.0,0.32,4,True,medium,0.55,2,8,15
+SKU0014,Coriander,Vegetables,Coriander,bunch,8.85,14.75,5.9,0.4,2,True,high,0.8,2,8,15
+SKU0015,Beans,Vegetables,Beans,kg,27.5,39.28,11.79,0.3,6,True,medium,1.0,2,8,15
+SKU0016,Beetroot,Vegetables,Beetroot,kg,36.0,51.43,15.43,0.3,10,True,medium,0.8,2,8,15
+SKU0017,Ginger,Vegetables,Ginger,kg,106.35,156.39,50.04,0.32,15,True,low,0.45,2,8,15
+SKU0018,Garlic,Vegetables,Garlic,kg,126.41,180.59,54.18,0.3,25,True,low,0.5,2,8,15
+SKU0019,Lemon,Vegetables,Lemon,kg,60.54,86.48,25.94,0.3,10,True,medium,0.8,2,8,15
+SKU0020,Pumpkin,Vegetables,Pumpkin,kg,19.83,27.54,7.71,0.28,15,True,low,0.6,2,8,15
+SKU0021,Banana,Fruits,Banana,dozen,28.69,39.85,11.16,0.28,5,True,medium,1.3,2,9,18
+SKU0022,Apple,Fruits,Apple,kg,151.61,210.57,58.96,0.28,20,True,medium,0.8,2,8,15
+SKU0023,Mango,Fruits,Mango,kg,85.91,126.33,40.43,0.32,7,True,high,0.8,2,8,15
+SKU0024,Orange,Fruits,Orange,kg,59.59,82.77,23.17,0.28,18,True,medium,0.7,2,8,15
+SKU0025,Papaya,Fruits,Papaya,kg,44.84,64.06,19.22,0.3,5,True,medium,0.7,2,8,15
+SKU0026,Watermelon,Fruits,Watermelon,kg,23.79,33.04,9.25,0.28,5,True,high,0.8,2,8,15
+SKU0027,Grapes,Fruits,Grapes,kg,64.95,92.78,27.84,0.3,5,True,high,0.55,2,8,15
+SKU0028,Pomegranate,Fruits,Pomegranate,kg,139.7,194.03,54.33,0.28,20,True,low,0.45,2,8,15
+SKU0029,Guava,Fruits,Guava,kg,63.93,91.33,27.4,0.3,6,True,medium,0.6,2,8,15
+SKU0030,Pineapple,Fruits,Pineapple,piece,60.15,85.93,25.78,0.3,7,True,medium,0.4,2,8,15
+SKU0031,Milk 500ml,Dairy,Milk 500ml,pack,23.33,27.78,4.44,0.16,7,True,medium,2.2,4,15,30
+SKU0032,Milk 1L,Dairy,Milk 1L,pack,56.79,67.61,10.82,0.16,7,True,medium,1.4,2,9,19
+SKU0033,Curd 500g,Dairy,Curd 500g,pack,41.53,51.92,10.38,0.2,10,True,medium,0.9,2,8,15
+SKU0034,Paneer 200g,Dairy,Paneer 200g,pack,77.84,99.8,21.96,0.22,7,True,medium,0.45,2,8,15
+SKU0035,Butter 100g,Dairy,Butter 100g,pack,70.05,89.8,19.76,0.22,60,False,low,0.3,2,8,15
+SKU0036,Cheese Slices,Dairy,Cheese Slices,pack,111.02,148.02,37.01,0.25,45,False,low,0.3,2,8,15
+SKU0037,Buttermilk,Dairy,Buttermilk,pack,17.12,20.88,3.76,0.18,5,True,high,0.9,2,8,15
+SKU0038,Bottled Water 1L,Beverages,Bottled Water 1L,bottle,17.44,22.36,4.92,0.22,365,False,high,2.4,4,16,33
+SKU0039,Bottled Water 500ml,Beverages,Bottled Water 500ml,bottle,10.17,13.03,2.87,0.22,365,False,high,3.2,6,22,44
+SKU0040,Cola 750ml,Beverages,Cola 750ml,bottle,32.22,42.95,10.74,0.25,180,False,high,1.1,2,8,15
+SKU0041,Lemon Drink,Beverages,Lemon Drink,bottle,39.42,52.56,13.14,0.25,180,False,high,0.9,2,8,15
+SKU0042,Orange Juice 1L,Beverages,Orange Juice 1L,pack,79.94,111.03,31.09,0.28,60,False,high,0.45,2,8,15
+SKU0043,Energy Drink,Beverages,Energy Drink,can,67.97,94.4,26.43,0.28,180,False,high,0.35,2,8,15
+SKU0044,Vanilla Ice Cream 500ml,Frozen,Vanilla Ice Cream 500ml,tub,118.97,169.96,50.99,0.3,120,False,high,0.45,2,8,15
+SKU0045,Chocolate Ice Cream 500ml,Frozen,Chocolate Ice Cream 500ml,tub,161.78,231.11,69.33,0.3,120,False,high,0.4,2,8,15
+SKU0046,Frozen Peas 500g,Frozen,Frozen Peas 500g,pack,68.33,91.11,22.78,0.25,180,False,medium,0.3,2,8,15
+SKU0047,Rice 5kg,Grocery,Rice 5kg,bag,344.71,400.83,56.12,0.14,270,False,low,0.5,2,8,15
+SKU0048,Rice 1kg,Grocery,Rice 1kg,bag,65.22,75.84,10.62,0.14,270,False,low,0.9,2,8,15
+SKU0049,Toor Dal 1kg,Grocery,Toor Dal 1kg,bag,117.38,139.74,22.36,0.16,270,False,low,0.55,2,8,15
+SKU0050,Moong Dal 1kg,Grocery,Moong Dal 1kg,bag,138.58,164.97,26.4,0.16,270,False,low,0.45,2,8,15
+SKU0051,Cooking Oil 1L,Grocery,Cooking Oil 1L,bottle,126.24,148.52,22.28,0.15,240,False,low,0.8,2,8,15
+SKU0052,Sunflower Oil 1L,Grocery,Sunflower Oil 1L,bottle,125.63,147.8,22.17,0.15,240,False,low,0.7,2,8,15
+SKU0053,Wheat Flour 1kg,Grocery,Wheat Flour 1kg,bag,38.01,45.25,7.24,0.16,180,False,low,0.7,2,8,15
+SKU0054,Sugar 1kg,Grocery,Sugar 1kg,bag,39.44,45.86,6.42,0.14,270,False,low,0.65,2,8,15
+SKU0055,Salt 1kg,Grocery,Salt 1kg,bag,22.55,26.22,3.67,0.14,365,False,low,0.45,2,8,15
+SKU0056,Tea 250g,Grocery,Tea 250g,pack,98.12,125.79,27.67,0.22,270,False,low,0.45,2,8,15
+SKU0057,Coffee 200g,Grocery,Coffee 200g,pack,134.44,172.36,37.92,0.22,270,False,low,0.35,2,8,15
+SKU0058,Bread,Grocery,Bread,loaf,32.53,40.66,8.13,0.2,4,True,medium,1.1,2,8,15
+SKU0059,Eggs 6-pack,Grocery,Eggs 6-pack,pack,39.19,47.79,8.6,0.18,21,True,medium,0.9,2,8,15
+SKU0060,Potato Chips,Snacks,Potato Chips,pack,17.95,25.64,7.69,0.3,120,False,high,1.5,3,10,21
+SKU0061,Salt Biscuits,Snacks,Salt Biscuits,pack,12.98,18.03,5.05,0.28,120,False,high,1.3,2,9,18
+SKU0062,Chocolate Bar,Snacks,Chocolate Bar,bar,29.48,42.11,12.63,0.3,180,False,high,0.8,2,8,15
+SKU0063,Mixed Nuts 200g,Snacks,Mixed Nuts 200g,pack,148.71,198.27,49.57,0.25,180,False,low,0.25,2,8,15
+SKU0064,Instant Noodles,Snacks,Instant Noodles,pack,16.86,22.48,5.62,0.25,180,False,high,1.4,2,9,19
+SKU0065,Bath Soap,Personal Care,Bath Soap,bar,32.38,44.97,12.59,0.28,540,False,low,0.65,2,8,15
+SKU0066,Shampoo 180ml,Personal Care,Shampoo 180ml,bottle,95.09,135.84,40.75,0.3,540,False,low,0.35,2,8,15
+SKU0067,Toothpaste 150g,Personal Care,Toothpaste 150g,tube,66.27,92.04,25.77,0.28,540,False,low,0.35,2,8,15
+SKU0068,Toothbrush,Personal Care,Toothbrush,piece,25.46,36.37,10.91,0.3,720,False,low,0.2,2,8,15
+SKU0069,Detergent 1kg,Home Care,Detergent 1kg,pack,120.82,158.97,38.15,0.24,540,False,low,0.4,2,8,15
+SKU0070,Dishwash Liquid 500ml,Home Care,Dishwash Liquid 500ml,bottle,79.81,106.41,26.6,0.25,540,False,low,0.3,2,8,15
+SKU0071,Floor Cleaner 1L,Home Care,Floor Cleaner 1L,bottle,92.89,123.85,30.96,0.25,540,False,low,0.25,2,8,15
+SKU0072,Umbrella,Seasonal,Umbrella,piece,192.35,282.86,90.52,0.32,900,False,rain,0.12,2,8,15
+SKU0073,Raincoat,Seasonal,Raincoat,piece,306.69,438.12,131.44,0.3,900,False,rain,0.08,2,8,15
+SKU0074,Festival Decoration Set,Seasonal,Festival Decoration Set,set,85.99,132.3,46.3,0.35,900,False,festival,0.15,2,8,15
+SKU0075,Gift Pack,Seasonal,Gift Pack,pack,187.12,275.17,88.06,0.32,365,False,festival,0.1,2,8,15
+SKU0076,Notebook,Stationery,Notebook,piece,54.02,72.02,18.01,0.25,900,False,school,0.45,2,8,15
+SKU0077,Pen Pack,Stationery,Pen Pack,pack,37.5,52.09,14.58,0.28,900,False,school,0.5,2,8,15
+SKU0078,School Backpack,Stationery,School Backpack,piece,644.78,859.71,214.93,0.25,900,False,school,0.08,2,8,15
+SKU0079,Cake 500g,Bakery,Cake 500g,cake,231.01,320.85,89.84,0.28,3,True,weekend,0.15,2,8,15
+SKU0080,Cookies 200g,Bakery,Cookies 200g,pack,57.88,77.17,19.29,0.25,60,False,weekend,0.35,2,8,15
+SKU0081,Chicken 500g,Meat & Seafood,Chicken 500g,pack,114.39,142.98,28.6,0.2,2,True,weekend,0.45,2,8,15
+SKU0082,Fish 500g,Meat & Seafood,Fish 500g,pack,190.59,238.23,47.65,0.2,2,True,weekend,0.3,2,8,15
+SKU0083,Chana 1kg,Pulses,Chana 1kg,bag,83.74,99.69,15.95,0.16,270,False,low,0.35,2,8,15
+SKU0084,Urad Dal 1kg,Pulses,Urad Dal 1kg,bag,119.41,142.15,22.74,0.16,270,False,low,0.3,2,8,15
+SKU0085,Turmeric 100g,Spices,Turmeric 100g,pack,28.33,37.77,9.44,0.25,540,False,low,0.3,2,8,15
+SKU0086,Chilli Powder 100g,Spices,Chilli Powder 100g,pack,43.91,58.55,14.64,0.25,540,False,low,0.3,2,8,15
+SKU0087,Cumin 100g,Spices,Cumin 100g,pack,47.54,63.38,15.85,0.25,540,False,low,0.2,2,8,15
+SKU0088,Baby Diapers Small,Baby Care,Baby Diapers Small,pack,329.76,433.89,104.13,0.24,720,False,low,0.12,2,8,15
+SKU0089,Baby Wipes,Baby Care,Baby Wipes,pack,80.53,107.37,26.84,0.25,720,False,low,0.18,2,8,15
+SKU0090,Pet Food 1kg,Pet Care,Pet Food 1kg,bag,273.03,350.04,77.01,0.22,540,False,low,0.1,2,8,15
+SKU0091,Garbage Bags,Household,Garbage Bags,pack,69.23,92.31,23.08,0.25,720,False,low,0.2,2,8,15
+SKU0092,LED Bulb 9W,Household,LED Bulb 9W,piece,119.88,153.69,33.81,0.22,900,False,low,0.08,2,8,15
+SKU0093,Idli Batter 1kg,Ready to Eat,Idli Batter 1kg,pack,71.35,91.48,20.13,0.22,4,True,weekend,0.55,2,8,15
+SKU0094,Dosa Batter 1kg,Ready to Eat,Dosa Batter 1kg,pack,76.06,97.52,21.45,0.22,4,True,weekend,0.5,2,8,15
+SKU0095,Frozen Paratha 400g,Ready to Eat,Frozen Paratha 400g,pack,104.14,138.85,34.71,0.25,180,False,weekend,0.3,2,8,15
+SKU0096,Tender Coconut Water,Beverages,Tender Coconut Water,bottle,49.15,65.53,16.38,0.25,5,True,hot,0.5,2,8,15
+SKU0097,Sweet Corn,Vegetables,Sweet Corn,pack,42.81,61.16,18.35,0.3,5,True,medium,0.45,2,8,15
+SKU0098,Mushroom 200g,Vegetables,Mushroom 200g,pack,38.91,57.22,18.31,0.32,4,True,high,0.25,2,8,15
+SKU0099,Strawberry 200g,Fruits,Strawberry 200g,box,98.26,144.5,46.24,0.32,3,True,high,0.12,2,8,15
+SKU0100,Mosambi,Fruits,Mosambi,kg,69.84,96.99,27.16,0.28,15,True,medium,0.5,2,8,15

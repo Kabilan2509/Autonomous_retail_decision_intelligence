@@ -1,0 +1,8 @@
+event_type,affected_categories,modeling_guidance
+Heatwave,Beverages; Frozen,Calibrate with temperature and historical category response
+Heavy Rain,Seasonal; Grocery,Rainwear may rise; delivery reliability may fall
+Festival,Seasonal; Grocery; Snacks,Apply event-window uplift to relevant stores/categories
+Major Event,Beverages; Snacks; Ready to Eat,Use store catchment proximity
+Transport Disruption,All,Assess footfall and delivery delay separately
+School Reopening,Stationery; Snacks; Beverages,Apply near schools and campuses
+Market Disruption,Vegetables; Fruits,Model sourcing price and availability risk
