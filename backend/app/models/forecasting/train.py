@@ -272,7 +272,7 @@ class ForecastingPipeline:
 
     def _get_history(self, store_id: str, sku_id: str) -> pd.Series:
         """Return historical quantity series for a store-SKU pair."""
-        return self._history.get((store_id, sku_id), pd.Series(dtype=float))
+        return self._history.get((store_id, sku_id), pd.Series(dtype=float, index=pd.DatetimeIndex([])))
 
     # ──────────────────────────────────────────────────────────────────────────
     # Baseline predictors (per single row)

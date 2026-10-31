@@ -106,8 +106,8 @@ class DemandForecastingAgent(BaseAgent):
             Keys: store_id, sku_id, model_name, generated_at, horizon_days,
                   forecasts, important_features, confidence
         """
-        store_id = str(context["store_id"])
-        sku_id = str(context["sku_id"])
+        store_id = str(context.get("store_id", "ST001"))
+        sku_id = str(context.get("sku_id") or context.get("product_id", "SKU0001"))
         horizon_days = int(context.get("horizon_days", 7))
         reference_date = context.get("reference_date", None)
 

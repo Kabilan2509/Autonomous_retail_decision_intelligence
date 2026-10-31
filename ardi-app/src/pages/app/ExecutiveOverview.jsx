@@ -10,7 +10,9 @@ import {
   Building2,
   CheckCircle2,
   ArrowUpRight,
-  TrendingDown
+  TrendingDown,
+  MapPin,
+  Cpu
 } from 'lucide-react'
 import {
   ResponsiveContainer,
@@ -20,21 +22,23 @@ import {
   YAxis,
   Tooltip,
   CartesianGrid,
-  PieChart,
-  Pie,
-  Cell
 } from 'recharts'
 import { api } from '../../services/api'
-
-const COLORS = ['#3b82f6', '#14b8a6', '#f59e0b', '#ef4444']
+import StoreMap from '../../components/StoreMap'
+import AgentPipelineMonitor from '../../components/AgentPipelineMonitor'
 
 export default function ExecutiveOverview() {
   const [summary, setSummary] = useState(null)
+  const [stores, setStores] = useState([])
   const [loading, setLoading] = useState(true)
+  const [selectedStoreId, setSelectedStoreId] = useState('ST001')
 
   useEffect(() => {
-    api.getDashboardSummary()
-      .then(data => setSummary(data))
+    Promise.all([api.getDashboardSummary(), api.getStores()])
+      .then(([sumData, storesData]) => {
+        setSummary(sumData)
+        setStores(storesData.stores || [])
+      })
       .catch(console.error)
       .finally(() => setLoading(false))
   }, [])
@@ -43,7 +47,7 @@ export default function ExecutiveOverview() {
     return (
       <div className="p-16 text-center text-slate-400 text-xs">
         <RotateCw className="w-6 h-6 animate-spin mx-auto mb-2 text-blue-400" />
-        Loading Executive Intelligence Overview...
+        Loading Executive Intelligence Overview & Network Map...
       </div>
     )
   }
@@ -54,7 +58,7 @@ export default function ExecutiveOverview() {
     { label: 'Stockout Risk SKUs', value: summary.stockout_risk_skus, sub: 'Inventory <= reorder point', icon: AlertTriangle, color: 'text-rose-400' },
     { label: 'Expiry Risk SKUs', value: summary.expiry_risk_skus, sub: 'Perishables cover > shelf life', icon: Boxes, color: 'text-amber-400' },
     { label: 'Wastage Cost', value: `₹${(summary.wastage_cost_inr / 100000).toFixed(2)} Lakh`, sub: 'Synthetic V3 recalibrated', icon: TrendingDown, color: 'text-slate-300' },
-    { label: 'Total Stores & SKUs', value: `${summary.total_stores} Stores`, sub: `${summary.total_skus} Active Products`, icon: Building2, color: 'text-teal-400' },
+    { label: 'Network Scale', value: `${summary.total_stores} Stores`, sub: `${summary.total_skus} Active Products`, icon: Building2, color: 'text-teal-400' },
   ]
 
   return (
@@ -66,10 +70,10 @@ export default function ExecutiveOverview() {
             <span className="p-1.5 rounded-lg bg-blue-600/20 text-blue-400 border border-blue-500/30">
               <LayoutDashboard className="w-5 h-5" />
             </span>
-            <h1 className="text-xl font-bold tracking-tight text-white">Executive Overview</h1>
+            <h1 className="text-xl font-bold tracking-tight text-white">Executive Command Center</h1>
           </div>
           <p className="text-xs text-slate-400 mt-1">
-            Macro operational performance, city cluster health, and active stock exposure.
+            Real-time multi-agent operations, geospatial store network health, and autonomous decision oversight.
           </p>
         </div>
         <div className="text-right text-xs">
@@ -94,6 +98,13 @@ export default function ExecutiveOverview() {
           )
         })}
       </div>
+
+      {/* Geographic Store Network Map */}
+      <StoreMap
+        stores={stores}
+        selectedStoreId={selectedStoreId}
+        onSelectStore={(st) => setSelectedStoreId(st.store_id)}
+      />
 
       {/* City Breakdown & Performance */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
@@ -122,7 +133,7 @@ export default function ExecutiveOverview() {
         <div className="lg:col-span-4 bg-slate-900 border border-slate-800 rounded-xl p-5 space-y-4">
           <h2 className="text-xs font-bold text-white uppercase tracking-wider">Store Distribution by City</h2>
           <div className="space-y-3">
-            {summary.city_performance?.map((c, i) => (
+            {summary.city_performance?.map((c) => (
               <div key={c.city} className="p-3 rounded-lg bg-slate-950/60 border border-slate-800 space-y-1">
                 <div className="flex items-center justify-between text-xs">
                   <span className="font-semibold text-white">{c.city}</span>
@@ -135,13 +146,11 @@ export default function ExecutiveOverview() {
               </div>
             ))}
           </div>
-
-          <div className="p-3 rounded-lg bg-blue-950/20 border border-blue-900/40 text-[11px] text-slate-300">
-            <span className="font-bold text-blue-400 block mb-1">Intelligence Status: Active</span>
-            7 specialized agents continuously observing sales velocity, weather forecasts, and supplier PO fill rates across all 20 stores.
-          </div>
         </div>
       </div>
+
+      {/* Multi-Agent Pipeline & Architecture Monitor */}
+      <AgentPipelineMonitor />
     </div>
   )
 }

@@ -28,6 +28,8 @@ export async function fetchApi(endpoint, options = {}) {
 export const api = {
   // Dashboard
   getDashboardSummary: () => fetchApi('/dashboard/summary'),
+  getStores: () => fetchApi('/dashboard/stores'),
+  getAgentsStatus: () => fetchApi('/dashboard/agents/status'),
 
   // Demand Forecasts
   getForecast: (storeId, skuId, horizon = 7) => 
