@@ -7,12 +7,17 @@ import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
 import AppShell from './components/AppShell'
 
+// 10 ARDI Intelligence Pages
 import DecisionHub from './pages/app/DecisionHub'
-import Warehouses from './pages/app/Warehouses'
-import LogisticsMap from './pages/app/LogisticsMap'
-import Promotions from './pages/app/Promotions'
-import Competitors from './pages/app/Competitors'
-import Analytics from './pages/app/Analytics'
+import ExecutiveOverview from './pages/app/ExecutiveOverview'
+import DemandIntelligence from './pages/app/DemandIntelligence'
+import InventoryControl from './pages/app/InventoryControl'
+import SupplierRisk from './pages/app/SupplierRisk'
+import PricingMargin from './pages/app/PricingMargin'
+import ExternalSignals from './pages/app/ExternalSignals'
+import LateralLogistics from './pages/app/LateralLogistics'
+import SimulationLab from './pages/app/SimulationLab'
+import AuditCenter from './pages/app/AuditCenter'
 
 export default function App() {
   return (
@@ -20,8 +25,8 @@ export default function App() {
       <StoreProvider>
         <BrowserRouter>
           <Routes>
-            {/* Root → redirect to signin */}
-            <Route path="/" element={<Navigate to="/signin" replace />} />
+            {/* Root → redirect to decision hub for immediate hackathon demonstration */}
+            <Route path="/" element={<Navigate to="/app/decision-hub" replace />} />
 
             {/* Auth pages */}
             <Route path="/signin" element={<SignIn />} />
@@ -29,18 +34,27 @@ export default function App() {
 
             {/* Protected app shell */}
             <Route path="/app" element={<AppShell />}>
-              {/* Default /app → decision-hub */}
               <Route index element={<Navigate to="decision-hub" replace />} />
               <Route path="decision-hub" element={<DecisionHub />} />
-              <Route path="warehouses" element={<Warehouses />} />
-              <Route path="logistics-map" element={<LogisticsMap />} />
-              <Route path="promotions" element={<Promotions />} />
-              <Route path="competitors" element={<Competitors />} />
-              <Route path="analytics" element={<Analytics />} />
+              <Route path="overview" element={<ExecutiveOverview />} />
+              <Route path="demand" element={<DemandIntelligence />} />
+              <Route path="inventory" element={<InventoryControl />} />
+              <Route path="suppliers" element={<SupplierRisk />} />
+              <Route path="pricing" element={<PricingMargin />} />
+              <Route path="external" element={<ExternalSignals />} />
+              <Route path="logistics-map" element={<LateralLogistics />} />
+              <Route path="simulation-lab" element={<SimulationLab />} />
+              <Route path="audit" element={<AuditCenter />} />
+
+              {/* Legacy backward compatibility aliases */}
+              <Route path="warehouses" element={<Navigate to="/app/inventory" replace />} />
+              <Route path="promotions" element={<Navigate to="/app/pricing" replace />} />
+              <Route path="competitors" element={<Navigate to="/app/external" replace />} />
+              <Route path="analytics" element={<Navigate to="/app/audit" replace />} />
             </Route>
 
-            {/* Catch-all → signin */}
-            <Route path="*" element={<Navigate to="/signin" replace />} />
+            {/* Catch-all → decision hub */}
+            <Route path="*" element={<Navigate to="/app/decision-hub" replace />} />
           </Routes>
         </BrowserRouter>
       </StoreProvider>
