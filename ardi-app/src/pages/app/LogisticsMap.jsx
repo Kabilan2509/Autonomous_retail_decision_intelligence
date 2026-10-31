@@ -592,7 +592,7 @@ export default function LogisticsMap() {
   useInjectStyles()
 
   const currentStore = useAppStore((s) => s.currentStore)
-  const stores       = useAppStore((s) => s.stores)
+  const cities       = useAppStore((s) => s.cities)
 
   const totalUnitsInTransit = SHIPMENTS.reduce((s, t) => s + t.quantity, 0)
   const avgProgress         = Math.round(SHIPMENTS.reduce((s, t) => s + t.progress, 0) / SHIPMENTS.length)
@@ -638,7 +638,7 @@ export default function LogisticsMap() {
         <StatPill
           icon={Radio}
           label="Network Nodes"
-          value={stores.length}
+          value={cities.length}
           color="bg-gradient-to-br from-amber-500 to-orange-600"
         />
       </div>

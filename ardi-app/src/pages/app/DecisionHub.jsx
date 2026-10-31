@@ -443,15 +443,41 @@ function StatCard({ icon: Icon, label, value, sub, color }) {
 // ─── Main DecisionHub Page ────────────────────────────────────────────────────
 
 export default function DecisionHub() {
-  const ai_decisions      = useAppStore((s) => s.ai_decisions)
-  const currentStore      = useAppStore((s) => s.currentStore)
+  const ai_decisions         = useAppStore((s) => s.ai_decisions)
+  const currentStore         = useAppStore((s) => s.currentStore)
+  const activeCity           = useAppStore((s) => s.activeCity)
+  const activeStore          = useAppStore((s) => s.activeStore)
+  const cities               = useAppStore((s) => s.cities)
+  const stores               = useAppStore((s) => s.stores)
   const updateDecisionStatus = useAppStore((s) => s.updateDecisionStatus)
 
   const [activeDecision, setActiveDecision] = useState(null)
 
-  const pendingCount  = ai_decisions.filter((d) => d.status === 'PENDING').length
-  const approvedCount = ai_decisions.filter((d) => d.status === 'APPROVED').length
-  const totalImpact   = '+$6,200'  // sum of all positive impacts
+  // ── Derive context labels ───────────────────────────────────────────────────
+  const cityObj        = cities.find((c) => c.id === activeCity) ?? cities[0]
+  const isAllStores    = activeStore === 'all'
+  const storeObj       = isAllStores ? null : stores.find((s) => s.id === activeStore)
+
+  // ── Filter decisions: city first, then narrow to store ─────────────────────
+  const cityDecisions = ai_decisions.filter(
+    (d) => d.source === cityObj.name || d.destination === cityObj.name,
+  )
+  const visibleDecisions = isAllStores
+    ? cityDecisions
+    : cityDecisions.filter(
+        (d) =>
+          d.source_store_id === activeStore ||
+          d.destination_store_id === activeStore ||
+          // also show city-wide decisions (null store_id) when a store is active
+          (d.source_store_id === null && d.destination_store_id === null),
+      )
+
+  // Fallback: if city has no decisions show all
+  const displayDecisions = visibleDecisions.length > 0 ? visibleDecisions : ai_decisions
+
+  const pendingCount  = displayDecisions.filter((d) => d.status === 'PENDING').length
+  const approvedCount = displayDecisions.filter((d) => d.status === 'APPROVED').length
+  const totalImpact   = '+$7,480'
 
   // When a user clicks a card, toggle or switch active
   const handleCardClick = (decision) => {
@@ -462,7 +488,6 @@ export default function DecisionHub() {
 
   const handleApprove = (decision) => {
     updateDecisionStatus(decision.decision_id, 'APPROVED')
-    // Reflect updated status in sidebar
     setActiveDecision((prev) =>
       prev?.decision_id === decision.decision_id
         ? { ...prev, status: 'APPROVED' }
@@ -501,8 +526,12 @@ export default function DecisionHub() {
         </div>
         <h1 className="text-2xl font-bold text-white">AI Action Center</h1>
         <p className="text-sm text-slate-400 mt-1">
-          Active store: <span className="text-blue-400 font-semibold">{currentStore}</span>
-          {' · '}Real-time AI recommendations awaiting your review
+          <span className="text-blue-400 font-semibold">{cityObj.name}</span>
+          {!isAllStores && storeObj && (
+            <> <span className="text-slate-600">›</span> <span className="text-purple-400 font-semibold">{storeObj.area}</span></>
+          )}
+          {isAllStores && <span className="text-slate-600"> · All Stores</span>}
+          {' · '}{displayDecisions.length} AI recommendation{displayDecisions.length !== 1 ? 's' : ''} awaiting review
         </p>
       </div>
 
@@ -511,7 +540,7 @@ export default function DecisionHub() {
         <StatCard
           icon={BrainCircuit}
           label="AI Recommendations"
-          value={ai_decisions.length}
+          value={displayDecisions.length}
           color="bg-gradient-to-br from-blue-500 to-blue-600"
         />
         <StatCard
@@ -548,7 +577,7 @@ export default function DecisionHub() {
           </div>
 
           {/* Decision cards */}
-          {ai_decisions.map((decision) => (
+          {displayDecisions.map((decision) => (
             <ActionCard
               key={decision.decision_id}
               decision={decision}
