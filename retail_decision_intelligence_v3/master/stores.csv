@@ -1,0 +1,21 @@
+store_id,store_name,location,neighborhood,region,store_type,capacity_units,shelf_capacity_units,latitude,longitude,operating_cost_per_day
+ST001,BAN Retail 1,Bangalore,Whitefield,Karnataka,Urban,8528,5810,12.97072,77.62923,5741.28
+ST002,BAN Retail 2,Bangalore,Electronic City,Karnataka,Residential,6419,4544,12.95964,77.64193,5462.25
+ST003,BAN Retail 3,Bangalore,Indiranagar,Karnataka,Commercial,7800,5788,12.92398,77.63155,4260.3
+ST004,BAN Retail 4,Bangalore,Jayanagar,Karnataka,Transit,7837,4562,12.93478,77.51189,6130.89
+ST005,BAN Retail 5,Bangalore,Yelahanka,Karnataka,Mixed,5738,3175,12.99536,77.51734,5427.6
+ST006,BAN Retail 6,Bangalore,Koramangala,Karnataka,Urban,5651,3162,12.96165,77.61914,3863.9
+ST007,BAN Retail 7,Bangalore,Hebbal,Karnataka,Residential,6146,4523,13.00886,77.62437,4603.82
+ST008,BAN Retail 8,Bangalore,Malleshwaram,Karnataka,Commercial,7273,4674,12.97176,77.63499,5249.8
+ST009,CHE Retail 1,Chennai,Anna Nagar,Tamil Nadu,Urban,8880,4884,13.1692,80.28876,3600.88
+ST010,CHE Retail 2,Chennai,Velachery,Tamil Nadu,Residential,5916,4155,13.07487,80.25736,3869.34
+ST011,CHE Retail 3,Chennai,T. Nagar,Tamil Nadu,Commercial,7922,6097,13.08732,80.32997,3146.7
+ST012,CHE Retail 4,Chennai,Tambaram,Tamil Nadu,Transit,5201,3103,13.1166,80.26859,2647.4
+ST013,CHE Retail 5,Chennai,OMR,Tamil Nadu,Mixed,8917,5450,13.13117,80.29583,3407.16
+ST014,CHE Retail 6,Chennai,Adyar,Tamil Nadu,Urban,5570,3977,13.10681,80.24573,5212.58
+ST015,CHE Retail 7,Chennai,Porur,Tamil Nadu,Residential,6247,4295,13.19563,80.22918,6042.2
+ST016,COI Retail 1,Coimbatore,Gandhipuram,Tamil Nadu,Urban,5918,3691,11.01161,76.91885,4024.23
+ST017,COI Retail 2,Coimbatore,Peelamedu,Tamil Nadu,Residential,6175,3595,11.06164,76.96817,6117.03
+ST018,COI Retail 3,Coimbatore,RS Puram,Tamil Nadu,Commercial,6554,4420,11.05909,76.94195,3390.42
+ST019,COI Retail 4,Coimbatore,Saravanampatti,Tamil Nadu,Transit,8560,6512,11.02706,76.89558,5978.22
+ST020,COI Retail 5,Coimbatore,Town Hall,Tamil Nadu,Mixed,7989,5039,11.05447,76.96193,6061.52

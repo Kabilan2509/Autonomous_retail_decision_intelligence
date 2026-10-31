@@ -1,0 +1,21 @@
+{
+  "dataset_version": "V3 expiry-recalibrated",
+  "source": "Retail Decision Intelligence Dataset V2",
+  "change": "Daily expired units are capped at 5% of latent demand and at available stock after fulfilled sales; closing stock and wastage ledger are recalculated.",
+  "guardrail": "Daily expired units are capped at ceil(5% of latent demand) when original expiry is positive, with a minimum 1-unit allowance, and capped at available stock after fulfilled sales. This is a configurable synthetic assumption, not an industry benchmark.",
+  "important_limitation": "Purchase orders and goods receipts retain their V2 records. This V3 patch recalibrates expiry/wastage and end-of-period snapshot; it does not yet rebuild procurement order quantities or perform a complete FIFO batch-age simulation.",
+  "do_not_claim": "Do not present V3 wastage reduction as a measured AI improvement. It is a dataset simulation correction.",
+  "checks": {
+    "sales_rows": 658825,
+    "expired_units_total_v2": 779997,
+    "expired_units_total_v3": 15789,
+    "wastage_units_total_v3": 15789,
+    "wastage_cost_total_v3": 731724.19,
+    "stock_rollforward_mismatches": 0,
+    "negative_expired_units": 0,
+    "train_rows": 492765,
+    "validation_rows": 110105,
+    "test_rows": 55955,
+    "all_checks_pass": true
+  }
+}

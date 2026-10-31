@@ -1,0 +1,11 @@
+validation,status,exception_count
+Audit key duplicates,PASS,0
+Audit null key cells,PASS,0
+Expiry cap violations,PASS,0
+Available stock violations,PASS,0
+Negative V3 expiry,PASS,0
+Audit-sales expiry mismatches,PASS,0
+Sales-wastage expiry mismatches,PASS,0
+Stock roll-forward mismatches,PASS,0
+Missing product costs in expiry wastage,PASS,0
+Wastage cost row differences over ₹0.01,PASS,0

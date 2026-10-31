@@ -1,0 +1,392 @@
+{
+  "dataset_name": "Retail Decision Intelligence Dataset V2",
+  "synthetic": true,
+  "seed": 20261031,
+  "period": {
+    "start": "2025-11-01",
+    "end": "2026-10-31",
+    "days": 365
+  },
+  "cities": {
+    "Bangalore": 8,
+    "Chennai": 7,
+    "Coimbatore": 5
+  },
+  "stores": 20,
+  "products": 100,
+  "suppliers": 20,
+  "sales_rows": 658825,
+  "active_store_sku_pairs": 1805,
+  "news_rows": 105,
+  "purchase_orders": 40602,
+  "product_category_counts": {
+    "Vegetables": 22,
+    "Grocery": 13,
+    "Fruits": 12,
+    "Dairy": 7,
+    "Beverages": 7,
+    "Snacks": 5,
+    "Personal Care": 4,
+    "Seasonal": 4,
+    "Frozen": 3,
+    "Home Care": 3,
+    "Stationery": 3,
+    "Spices": 3,
+    "Ready to Eat": 3,
+    "Meat & Seafood": 2,
+    "Bakery": 2,
+    "Pulses": 2,
+    "Baby Care": 2,
+    "Household": 2,
+    "Pet Care": 1
+  },
+  "files": {
+    "master/stores.csv": {
+      "rows": 20,
+      "columns": [
+        "store_id",
+        "store_name",
+        "location",
+        "neighborhood",
+        "region",
+        "store_type",
+        "capacity_units",
+        "shelf_capacity_units",
+        "latitude",
+        "longitude",
+        "operating_cost_per_day"
+      ]
+    },
+    "master/products.csv": {
+      "rows": 100,
+      "columns": [
+        "sku_id",
+        "product_name",
+        "category",
+        "subcategory",
+        "unit_of_measure",
+        "cost",
+        "selling_price",
+        "gross_margin_per_unit",
+        "gross_margin_pct",
+        "shelf_life_days",
+        "is_perishable",
+        "demand_profile",
+        "base_daily_demand_units",
+        "min_stock_units",
+        "target_stock_units",
+        "max_stock_units"
+      ]
+    },
+    "master/suppliers.csv": {
+      "rows": 20,
+      "columns": [
+        "supplier_id",
+        "supplier_name",
+        "supplier_type",
+        "base_lead_time_days",
+        "reliability_score",
+        "on_time_rate",
+        "quality_rejection_rate",
+        "minimum_order_quantity",
+        "supplier_region",
+        "active"
+      ]
+    },
+    "master/supplier_product_map.csv": {
+      "rows": 200,
+      "columns": [
+        "sku_id",
+        "supplier_id",
+        "priority",
+        "contract_unit_cost"
+      ]
+    },
+    "master/store_assortment.csv": {
+      "rows": 2000,
+      "columns": [
+        "store_id",
+        "sku_id",
+        "is_ranged",
+        "assortment_start_date"
+      ]
+    },
+    "historical/sales_daily.csv": {
+      "rows": 658825,
+      "columns": [
+        "date",
+        "store_id",
+        "sku_id",
+        "opening_stock_units",
+        "receipts_units",
+        "demand_units",
+        "quantity",
+        "lost_sales_units",
+        "closing_stock_units",
+        "unit_price",
+        "discount_pct",
+        "revenue",
+        "cogs",
+        "gross_profit",
+        "returns_units",
+        "channel",
+        "temperature_c",
+        "rainfall_mm",
+        "competitor_price",
+        "news_signal_present",
+        "promotion_active",
+        "expired_units"
+      ]
+    },
+    "historical/promotions.csv": {
+      "rows": 240,
+      "columns": [
+        "promotion_id",
+        "store_id",
+        "sku_id",
+        "promotion_type",
+        "discount_pct",
+        "start_date",
+        "end_date",
+        "campaign_budget"
+      ]
+    },
+    "historical/events.csv": {
+      "rows": 33,
+      "columns": [
+        "event_id",
+        "location",
+        "event_type",
+        "event_date",
+        "expected_footfall",
+        "impact_index",
+        "affected_categories",
+        "event_radius_km"
+      ]
+    },
+    "historical/weather_daily.csv": {
+      "rows": 1095,
+      "columns": [
+        "date",
+        "location",
+        "temperature_c",
+        "rainfall_mm",
+        "weather_condition",
+        "forecast_temperature_c",
+        "forecast_rainfall_mm"
+      ]
+    },
+    "historical/competitor_prices_daily.csv": {
+      "rows": 109500,
+      "columns": [
+        "date",
+        "location",
+        "sku_id",
+        "competitor_id",
+        "competitor_price",
+        "our_reference_price"
+      ]
+    },
+    "historical/purchase_orders.csv": {
+      "rows": 40782,
+      "columns": [
+        "po_id",
+        "store_id",
+        "sku_id",
+        "supplier_id",
+        "order_date",
+        "ordered_quantity",
+        "expected_arrival_date",
+        "actual_arrival_date",
+        "received_quantity",
+        "quality_rejected_units",
+        "status",
+        "base_lead_time_days",
+        "delay_days",
+        "supplier_reliability_at_order"
+      ]
+    },
+    "historical/goods_receipts.csv": {
+      "rows": 40113,
+      "columns": [
+        "receipt_id",
+        "po_id",
+        "store_id",
+        "sku_id",
+        "receipt_date",
+        "quantity_received",
+        "quality_rejected_units"
+      ]
+    },
+    "historical/wastage.csv": {
+      "rows": 28472,
+      "columns": [
+        "date",
+        "store_id",
+        "sku_id",
+        "wastage_type",
+        "wasted_units",
+        "estimated_cost"
+      ]
+    },
+    "operational/inventory_snapshot.csv": {
+      "rows": 1805,
+      "columns": [
+        "snapshot_date",
+        "store_id",
+        "sku_id",
+        "on_hand_units",
+        "reserved_units",
+        "in_transit_units",
+        "reorder_point_units",
+        "target_stock_units",
+        "max_stock_units",
+        "days_of_cover_estimate",
+        "expiry_risk_flag"
+      ]
+    },
+    "operational/inventory_transfers.csv": {
+      "rows": 500,
+      "columns": [
+        "transfer_id",
+        "from_store_id",
+        "to_store_id",
+        "sku_id",
+        "quantity_units",
+        "distance_km",
+        "estimated_transit_hours",
+        "transfer_cost",
+        "status",
+        "transfer_date",
+        "is_intercity",
+        "cold_chain_required"
+      ]
+    },
+    "operational/price_history_weekly.csv": {
+      "rows": 15900,
+      "columns": [
+        "date",
+        "location",
+        "sku_id",
+        "regular_price",
+        "selling_price",
+        "markdown_pct"
+      ]
+    },
+    "operational/decision_logs_seed.csv": {
+      "rows": 900,
+      "columns": [
+        "decision_id",
+        "decision_date",
+        "store_id",
+        "sku_id",
+        "recommended_action",
+        "recommended_quantity_units",
+        "reasoning",
+        "evidence_on_hand_units",
+        "evidence_reserved_units",
+        "evidence_in_transit_units",
+        "evidence_avg_daily_demand",
+        "evidence_days_of_cover",
+        "approval_status",
+        "expected_impact",
+        "actual_outcome",
+        "policy_version"
+      ]
+    },
+    "external_signals/news_signals_synthetic.csv": {
+      "rows": 105,
+      "columns": [
+        "news_id",
+        "published_at",
+        "location",
+        "headline",
+        "source",
+        "url",
+        "category",
+        "event_type",
+        "affected_categories",
+        "relevance_score",
+        "demand_impact_direction",
+        "simulated_uplift_factor",
+        "confidence",
+        "verification_status",
+        "deduplication_key",
+        "impact_window_days"
+      ]
+    },
+    "external_signals/news_to_demand_mapping.csv": {
+      "rows": 7,
+      "columns": [
+        "event_type",
+        "affected_categories",
+        "modeling_guidance"
+      ]
+    },
+    "simulation/surprise_scenarios.csv": {
+      "rows": 8,
+      "columns": [
+        "scenario_id",
+        "location",
+        "scenario_type",
+        "target_entity",
+        "injected_change",
+        "expected_system_response"
+      ]
+    },
+    "evaluation/chronological_split_manifest.csv": {
+      "rows": 3,
+      "columns": [
+        "split",
+        "start_date",
+        "end_date",
+        "purpose"
+      ]
+    },
+    "evaluation/baseline_policies.csv": {
+      "rows": 5,
+      "columns": [
+        "baseline_id",
+        "baseline_name",
+        "policy_definition",
+        "benchmark_role"
+      ]
+    }
+  },
+  "quality_report": {
+    "seed": 20261031,
+    "checks": {
+      "sales_key_duplicates": 0,
+      "negative_quantity_rows": 0,
+      "fulfilled_gt_demand": 0,
+      "lost_sales_mismatch": 0,
+      "revenue_mismatch": 0,
+      "gross_profit_mismatch": 0,
+      "stock_rollforward_mismatch": 0,
+      "unique_products": 100,
+      "unmapped_sales_stores": 0,
+      "unmapped_sales_skus": 0
+    },
+    "purchase_order_status_counts": {
+      "Received": 35929,
+      "Delayed": 4184,
+      "Cancelled": 489,
+      "In Transit": 180
+    },
+    "split_row_counts": {
+      "train": 492765,
+      "validation": 110105,
+      "test": 55955
+    },
+    "sales_rows": 658825,
+    "all_checks_pass": true
+  },
+  "semantics": {
+    "demand_units": "forecast target/ground truth; do not use as same-day input",
+    "quantity": "fulfilled sales",
+    "lost_sales_units": "unmet demand",
+    "news_signals_synthetic": "simulated only, not live articles",
+    "decision_logs_seed": "heuristic examples; runtime agent logs should replace these for evaluation"
+  },
+  "purchase_order_rows": 40782
+}

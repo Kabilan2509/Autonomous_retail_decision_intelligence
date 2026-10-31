@@ -1,0 +1,6 @@
+baseline_id,baseline_name,policy_definition,benchmark_role
+B0,Fixed Reorder Point,Order to target when inventory position <= reorder point,Inventory baseline
+B1,Seasonal Naive,Use previous week's same weekday demand,Forecast baseline
+B2,ML Without News,"Sales lags, calendar, weather, promotions and price",News ablation
+B3,News-Aware Model,Validated lagged news and event features added to B2,Candidate model
+B4,Cost-Based Decision Policy,Choose feasible action minimizing expected total cost,Decision baseline
