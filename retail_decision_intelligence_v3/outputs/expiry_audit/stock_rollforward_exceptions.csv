@@ -1,0 +1,1 @@
+date,store_id,sku_id,opening_stock_units,receipts_units,demand_units,quantity,lost_sales_units,closing_stock_units,unit_price,discount_pct,revenue,cogs,gross_profit,returns_units,channel,temperature_c,rainfall_mm,competitor_price,news_signal_present,promotion_active,expired_units,calculated_closing_stock,stock_rollforward_difference

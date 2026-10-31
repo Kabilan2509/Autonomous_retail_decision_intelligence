@@ -1,0 +1,28 @@
+{
+  "seed": 20261031,
+  "checks": {
+    "sales_key_duplicates": 0,
+    "negative_quantity_rows": 0,
+    "fulfilled_gt_demand": 0,
+    "lost_sales_mismatch": 0,
+    "revenue_mismatch": 0,
+    "gross_profit_mismatch": 0,
+    "stock_rollforward_mismatch": 0,
+    "unique_products": 100,
+    "unmapped_sales_stores": 0,
+    "unmapped_sales_skus": 0
+  },
+  "purchase_order_status_counts": {
+    "Received": 35929,
+    "Delayed": 4184,
+    "Cancelled": 489,
+    "In Transit": 180
+  },
+  "split_row_counts": {
+    "train": 492765,
+    "validation": 110105,
+    "test": 55955
+  },
+  "sales_rows": 658825,
+  "all_checks_pass": true
+}

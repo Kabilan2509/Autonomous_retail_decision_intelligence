@@ -1,0 +1,9 @@
+scenario_id,location,scenario_type,target_entity,injected_change,expected_system_response
+SC001,Chennai,Supplier Failure,SUP003,supplier_reliability=0; delay open orders by 7 days,"Compare alternate supplier, transfers and lost-sales exposure"
+SC002,Bangalore,Demand Spike,SKU0001,demand_multiplier=1.60; duration_days=5,Reforecast tomato demand and evaluate transfers/replenishment
+SC003,Coimbatore,Heavy Rain,ALL,rainfall_mm=60; delivery_delay_multiplier=1.5,Recalculate category demand and inbound logistics risk
+SC004,Chennai,Competitor Discount,SKU0038,competitor_price_multiplier=0.75; duration_days=7,"Assess elasticity, margin floor and promotion response"
+SC005,Bangalore,News Event,STORE_CATCHMENT,event_footfall_multiplier=2; duration_days=2,Map event radius to stores and relevant categories
+SC006,Coimbatore,Cold Chain Failure,PERISHABLES,cold_chain_status=failed; duration_hours=8,Identify perishables and minimize spoilage safely
+SC007,All,Store Closure,ST006,store_status=closed; duration_days=2,Reallocate demand and stock to nearby stores
+SC008,All,Demand Collapse,CATEGORY:Seasonal,demand_multiplier=.55; duration_days=14,Avoid overstock and evaluate markdown decisions

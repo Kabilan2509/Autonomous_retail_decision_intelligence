@@ -1,0 +1,21 @@
+supplier_id,supplier_name,supplier_type,base_lead_time_days,reliability_score,on_time_rate,quality_rejection_rate,minimum_order_quantity,supplier_region,active
+SUP001,Supplier 01,Fresh Produce,5,0.982,0.914,0.009,46,Karnataka,True
+SUP002,Supplier 02,FMCG Distributor,5,0.881,0.909,0.031,27,Tamil Nadu,True
+SUP003,Supplier 03,Dairy Distributor,5,0.875,0.929,0.017,30,South India,True
+SUP004,Supplier 04,General Distributor,2,0.903,0.846,0.015,18,National,True
+SUP005,Supplier 05,Fresh Produce,4,0.906,0.902,0.019,10,Karnataka,True
+SUP006,Supplier 06,FMCG Distributor,5,0.974,0.834,0.018,18,Tamil Nadu,True
+SUP007,Supplier 07,Dairy Distributor,3,0.966,0.858,0.034,58,South India,True
+SUP008,Supplier 08,General Distributor,3,0.972,0.931,0.026,19,National,True
+SUP009,Supplier 09,Fresh Produce,3,0.885,0.946,0.005,50,Karnataka,True
+SUP010,Supplier 10,FMCG Distributor,4,0.885,0.92,0.015,21,Tamil Nadu,True
+SUP011,Supplier 11,Dairy Distributor,1,0.975,0.971,0.026,52,South India,True
+SUP012,Supplier 12,General Distributor,2,0.961,0.847,0.03,54,National,True
+SUP013,Supplier 13,Fresh Produce,1,0.871,0.973,0.014,46,Karnataka,True
+SUP014,Supplier 14,FMCG Distributor,1,0.901,0.826,0.032,62,Tamil Nadu,True
+SUP015,Supplier 15,Dairy Distributor,1,0.892,0.874,0.023,20,South India,True
+SUP016,Supplier 16,General Distributor,3,0.915,0.871,0.006,33,National,True
+SUP017,Supplier 17,Fresh Produce,3,0.964,0.915,0.011,13,Karnataka,True
+SUP018,Supplier 18,FMCG Distributor,2,0.932,0.856,0.028,11,Tamil Nadu,True
+SUP019,Supplier 19,Dairy Distributor,4,0.871,0.909,0.029,29,South India,True
+SUP020,Supplier 20,General Distributor,5,0.978,0.978,0.035,71,National,True

@@ -1,0 +1,13 @@
+{
+  "sales_rows": 658825,
+  "expired_units_total_v2": 779997,
+  "expired_units_total_v3": 15789,
+  "wastage_units_total_v3": 15789,
+  "wastage_cost_total_v3": 731724.19,
+  "stock_rollforward_mismatches": 0,
+  "negative_expired_units": 0,
+  "train_rows": 492765,
+  "validation_rows": 110105,
+  "test_rows": 55955,
+  "all_checks_pass": true
+}

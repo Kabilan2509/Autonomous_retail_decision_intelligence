@@ -1,0 +1,101 @@
+sku_id,product_name,category,v2_expired_units,v3_expired_units,affected_records,units_reduced
+SKU0001,Tomato,Vegetables,17693,848,886,16845
+SKU0002,Onion,Vegetables,0,0,0,0
+SKU0003,Potato,Vegetables,0,0,0,0
+SKU0004,Carrot,Vegetables,13925,319,395,13606
+SKU0005,Spinach,Vegetables,20657,733,1065,19924
+SKU0006,Cauliflower,Vegetables,40268,544,793,39724
+SKU0007,Capsicum,Vegetables,5799,469,621,5330
+SKU0008,Brinjal,Vegetables,18388,480,612,17908
+SKU0009,Okra,Vegetables,27214,458,638,26756
+SKU0010,Cucumber,Vegetables,20221,426,551,19795
+SKU0011,Cabbage,Vegetables,20765,385,531,20380
+SKU0012,Green Chilli,Vegetables,11088,342,701,10746
+SKU0013,Drumstick,Vegetables,21373,358,776,21015
+SKU0014,Coriander,Vegetables,14206,662,1088,13544
+SKU0015,Beans,Vegetables,5467,442,620,5025
+SKU0016,Beetroot,Vegetables,5763,278,467,5485
+SKU0017,Ginger,Vegetables,8284,170,353,8114
+SKU0018,Garlic,Vegetables,5710,88,186,5622
+SKU0019,Lemon,Vegetables,11933,259,423,11674
+SKU0020,Pumpkin,Vegetables,5695,187,375,5508
+SKU0021,Banana,Fruits,6292,571,699,5721
+SKU0022,Apple,Fruits,4398,128,206,4270
+SKU0023,Mango,Fruits,29721,328,549,29393
+SKU0024,Orange,Fruits,5124,138,251,4986
+SKU0025,Papaya,Fruits,36518,378,680,36140
+SKU0026,Watermelon,Fruits,18951,451,738,18500
+SKU0027,Grapes,Fruits,10555,339,705,10216
+SKU0028,Pomegranate,Fruits,9071,101,268,8970
+SKU0029,Guava,Fruits,6690,376,718,6314
+SKU0030,Pineapple,Fruits,8305,213,532,8092
+SKU0031,Milk 500ml,Dairy,10532,547,586,9985
+SKU0032,Milk 1L,Dairy,18107,440,524,17667
+SKU0033,Curd 500g,Dairy,729,175,199,554
+SKU0034,Paneer 200g,Dairy,23639,266,650,23373
+SKU0035,Butter 100g,Dairy,3613,26,94,3587
+SKU0036,Cheese Slices,Dairy,2538,24,94,2514
+SKU0037,Buttermilk,Dairy,17356,459,661,16897
+SKU0038,Bottled Water 1L,Beverages,0,0,0,0
+SKU0039,Bottled Water 500ml,Beverages,0,0,0,0
+SKU0040,Cola 750ml,Beverages,0,0,0,0
+SKU0041,Lemon Drink,Beverages,0,0,0,0
+SKU0042,Orange Juice 1L,Beverages,6,0,3,6
+SKU0043,Energy Drink,Beverages,0,0,0,0
+SKU0044,Vanilla Ice Cream 500ml,Frozen,46,2,6,44
+SKU0045,Chocolate Ice Cream 500ml,Frozen,44,5,8,39
+SKU0046,Frozen Peas 500g,Frozen,0,0,0,0
+SKU0047,Rice 5kg,Grocery,0,0,0,0
+SKU0048,Rice 1kg,Grocery,0,0,0,0
+SKU0049,Toor Dal 1kg,Grocery,0,0,0,0
+SKU0050,Moong Dal 1kg,Grocery,0,0,0,0
+SKU0051,Cooking Oil 1L,Grocery,0,0,0,0
+SKU0052,Sunflower Oil 1L,Grocery,0,0,0,0
+SKU0053,Wheat Flour 1kg,Grocery,0,0,0,0
+SKU0054,Sugar 1kg,Grocery,0,0,0,0
+SKU0055,Salt 1kg,Grocery,0,0,0,0
+SKU0056,Tea 250g,Grocery,0,0,0,0
+SKU0057,Coffee 200g,Grocery,0,0,0,0
+SKU0058,Bread,Grocery,15942,501,694,15441
+SKU0059,Eggs 6-pack,Grocery,778,91,128,687
+SKU0060,Potato Chips,Snacks,0,0,0,0
+SKU0061,Salt Biscuits,Snacks,0,0,0,0
+SKU0062,Chocolate Bar,Snacks,0,0,0,0
+SKU0063,Mixed Nuts 200g,Snacks,0,0,0,0
+SKU0064,Instant Noodles,Snacks,0,0,0,0
+SKU0065,Bath Soap,Personal Care,0,0,0,0
+SKU0066,Shampoo 180ml,Personal Care,0,0,0,0
+SKU0067,Toothpaste 150g,Personal Care,0,0,0,0
+SKU0068,Toothbrush,Personal Care,0,0,0,0
+SKU0069,Detergent 1kg,Home Care,0,0,0,0
+SKU0070,Dishwash Liquid 500ml,Home Care,0,0,0,0
+SKU0071,Floor Cleaner 1L,Home Care,0,0,0,0
+SKU0072,Umbrella,Seasonal,0,0,0,0
+SKU0073,Raincoat,Seasonal,0,0,0,0
+SKU0074,Festival Decoration Set,Seasonal,0,0,0,0
+SKU0075,Gift Pack,Seasonal,0,0,0,0
+SKU0076,Notebook,Stationery,0,0,0,0
+SKU0077,Pen Pack,Stationery,0,0,0,0
+SKU0078,School Backpack,Stationery,0,0,0,0
+SKU0079,Cake 500g,Bakery,19740,160,1011,19580
+SKU0080,Cookies 200g,Bakery,1114,20,67,1094
+SKU0081,Chicken 500g,Meat & Seafood,34263,386,996,33877
+SKU0082,Fish 500g,Meat & Seafood,24705,203,713,24502
+SKU0083,Chana 1kg,Pulses,0,0,0,0
+SKU0084,Urad Dal 1kg,Pulses,0,0,0,0
+SKU0085,Turmeric 100g,Spices,0,0,0,0
+SKU0086,Chilli Powder 100g,Spices,0,0,0,0
+SKU0087,Cumin 100g,Spices,0,0,0,0
+SKU0088,Baby Diapers Small,Baby Care,0,0,0,0
+SKU0089,Baby Wipes,Baby Care,0,0,0,0
+SKU0090,Pet Food 1kg,Pet Care,0,0,0,0
+SKU0091,Garbage Bags,Household,0,0,0,0
+SKU0092,LED Bulb 9W,Household,0,0,0,0
+SKU0093,Idli Batter 1kg,Ready to Eat,21989,388,737,21601
+SKU0094,Dosa Batter 1kg,Ready to Eat,42020,400,855,41620
+SKU0095,Frozen Paratha 400g,Ready to Eat,0,0,0,0
+SKU0096,Tender Coconut Water,Beverages,28218,367,742,27851
+SKU0097,Sweet Corn,Vegetables,7216,271,667,6945
+SKU0098,Mushroom 200g,Vegetables,34895,263,896,34632
+SKU0099,Strawberry 200g,Fruits,54090,153,1142,53937
+SKU0100,Mosambi,Fruits,8343,171,317,8172
